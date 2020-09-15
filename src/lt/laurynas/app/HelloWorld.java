@@ -158,17 +158,18 @@ public class HelloWorld {
             int beforeSorting = intArr6[kindex];
             System.out.println("Prieš rikiavimą " + beforeSorting);
             for(int kidx = 0; kidx < intArr6.length - 1; kidx++){
-
+                iterations++;
                 if(intArr6[kidx] > intArr6[kidx + 1]){
                     int temporary = intArr6[kidx + 1];
                     intArr6[kidx + 1] = intArr6[kidx];
                     intArr6[kidx] = temporary;
+                    changins++;
                    
                 }
             }
         }
         System.out.println("Po rikiavimo: " + Arrays.toString(intArr6));
-        System.out.println("Sukeitimų kartų skaičius iki išrikiavimo "+ iterations);
+        System.out.println("Iteracijos "+ iterations);
         System.out.println("Pasikeitimai: " + changins);
     }
 }
