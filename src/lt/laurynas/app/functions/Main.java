@@ -22,6 +22,8 @@ public class Main {
         System.out.println("Your array maximul value is: " + getMax(arrNums));
         System.out.println("**************************************");
         System.out.println("Your array sum is: " + getSum(arrNums));
+        System.out.println("**************************************");
+        System.out.println("Ordinary array is: " + Arrays.toString(getOrdinaryArray(arrNums)));
     }
     public static int getMin(int[] arrNums){
         int minValue = arrNums[0];
@@ -51,16 +53,18 @@ public class Main {
         return arraySum;
     }
 
-    // public static int getOrdinaryArray(int[] arrNums){
-    //     for(int u = 0; u < arrNums.length-1; u++){
-    //         for (int o = 0; o < arrNums.length-1; o++){
-    //             if(arrNums[o]>arrNums[o+1]){
-    //                 int temp = arrNums[o+1];
-    //                 arrNums[o+1] = arrNums[o];
-    //                 arrNums[o] = temp;
-    //             }
-    //         }
-    //     }
-    // }
+
+    public static int[] getOrdinaryArray(int[] arrNums){
+        for(int u = 0; u < arrNums.length-1; u++){
+            for (int o = 0; o < arrNums.length-1; o++){
+                if(arrNums[o]>arrNums[o+1]){
+                    int temp = arrNums[o+1];
+                    arrNums[o+1] = arrNums[o];
+                    arrNums[o] = temp;
+                }
+            }
+        }
+        return arrNums;
+    }
 
 }
