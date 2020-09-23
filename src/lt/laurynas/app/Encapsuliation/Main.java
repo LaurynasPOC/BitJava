@@ -14,11 +14,17 @@ public class Main {
         System.out.println("Enter person age: ");
         int age = sc.nextInt();
 
+        System.out.println("Enter person salary: ");
+        int salary = sc.nextInt();
+
+        sc.close();
+
         Person personInfo = new Person();
         personInfo.setName(name);
         personInfo.setLastName(lastName);
         personInfo.setAge(age);
-        System.out.println("Person name is " + personInfo.getName() + " last name is " + personInfo.getLastName() + " and he is " + personInfo.getAge()+" years old");
+        personInfo.setSalary(salary);
+        System.out.println("Person name is " + personInfo.getName() + " last name is " + personInfo.getLastName() + " he is " + personInfo.getAge()+" years old and he earns " + personInfo.getSalary());
     }
 }
 
@@ -26,15 +32,17 @@ class Person {
     private String name;
     private String lastName;
     private int age;
+    private int salary;
 
     public Person(){
 
     };
 
-    public Person(String n, String ln, int a){
+    public Person(String n, String ln, int a, int sal){
         this.name = n;
         this.lastName = ln;
         this.age = a;
+        this.salary=sal;
     }
 
     public void setName(String name){
@@ -59,4 +67,21 @@ class Person {
         return this.age;
     }
 
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                '}';
+    }
 }
